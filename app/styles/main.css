@@ -32,6 +32,8 @@ body {
 
 /* Custom page footer */
 .footer {
+  width: 100%;
+  text-align: center;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
@@ -43,7 +45,7 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
@@ -60,9 +62,9 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .container {
-    max-width: 730px;
+    max-width: 1024px;
   }
 
   /* Remove the padding we set earlier */
