@@ -442,7 +442,7 @@ module.exports = function (grunt) {
     'build'
   ]);
   
-  grunt.registerTask('heroku'), [
+  grunt.registerTask('heroku', [
 	'compass:dist', 'autoprefixer', 'imagemin'
   ]);
 };
