@@ -443,6 +443,6 @@ module.exports = function (grunt) {
   ]);
   
   grunt.registerTask('heroku', [
-	'compass:dist', 'autoprefixer', 'imagemin'
+	'build', 'compass:dist', 'autoprefixer', 'imagemin'
   ]);
 };
