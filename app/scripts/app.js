@@ -1,15 +1,7 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name finliteApp
- * @description
- * # finliteApp
- *
- * Main module of the application.
- */
 angular
-  .module('finliteApp', [
+  .module('finLiteApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',

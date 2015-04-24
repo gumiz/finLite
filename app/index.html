@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
+
   <body ng-app="finLiteApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -44,43 +45,41 @@
       </div>
     </nav>
 
-    <div class="container">
-
+    <div class="container" ng-controller="AccountsCtrl">
       <!-- Main component for a primary marketing message or call to action -->
       <div style="margin-top: 70px">
         <table class="table table-striped" style="min-width: 200px">
           <thead>
-          <tr>
-            <th>Konto</th>
-            <th>Opis</th>
-          </tr>
+            <tr>
+              <th>Konto</th>
+              <th>Opis</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>100</td>
-            <td>Kasa</td>
-          </tr>
-          <tr>
-            <td>200</td>
-            <td>Bank</td>
-          </tr>
-          <tr>
-            <td>204</td>
-            <td>Gotówka</td>
-          </tr>
-          <tr>
-            <td>501</td>
-            <td>Zadłużenie</td>
-          </tr>
-          <tr>
-            <td>805</td>
-            <td>Wydatki i dochody planowane</td>
-          </tr>
+            <tr ng-repeat="ac in accounts">
+              <td>{{ac.name}}</td>
+              <td>{{ac.description}}</td>
+            </tr>
           </tbody>
         </table>
         <br />
+        <table class="table table-striped" style="min-width: 200px">
+          <thead>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <input ng-model="newAccount.name" />
+            </td>
+            <td>
+              <input ng-model="newAccount.description" />
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <a class="btn btn-lg btn-primary" role="button" ng-click="addAccount()">Dodaj &raquo;</a>
 
-        <p><a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Dodaj &raquo;</a></p>
+        <p></p>
       </div>
 
     </div> <!-- /container -->
@@ -119,6 +118,8 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/accounts.js"></script>
+        <script src="scripts/services/repositoryService.js"></script>
         <!-- endbuild -->
 </body>
 </html>
