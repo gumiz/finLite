@@ -8,7 +8,7 @@ angular.module('finLiteApp').controller('AccountsCtrl', ['$scope', 'repositorySe
   var refresh = function() {
     repositoryService.getAccounts(gotAccounts);
   };
-
+  $scope.refresh = refresh;
   repositoryService.init(refresh);
 
   $scope.addAccount = function() {

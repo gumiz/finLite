@@ -1,22 +1,17 @@
 'use strict';
-angular.module('finLiteApp').service('repositoryService', [function () {
+angular.module('finLiteApp').service('repositoryService', ['$http', function ($http) {
 
   var accounts;
   var db;
 
-  var getAccounts = function(acc) {
-    var selectAllStatement = "SELECT * FROM Accounts";
-    db.transaction(function (tx) {
-      tx.executeSql(selectAllStatement, [], function (tx, result) {
-        accounts = [];
-        for (var i=0; i<result.rows.length; i++) {
-          var item = result.rows.item(i);
-          accounts.push(item);
-        }
-        acc(accounts);
+  var getAccounts = function(successFun) {
+    //$http.get('http://localhost:5000/accounts').successFun;
+    $http.get('http://localhost:5000/accounts').
+      success(function(data, status, headers, config) {
+        successFun(data);
+      }).
+      error(function(data, status, headers, config) {
       });
-    });
-    return accounts;
   };
 
   var addAccount = function(item, successFunc) {
