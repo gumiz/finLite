@@ -389,7 +389,14 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.registerTask('appServer', 'runs nodejs app server', function () {
+	  grunt.util.spawn({
+		  cmd: 'node',
+		  args: ['web.js']
+	  })
+  });
 
+  
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -401,6 +408,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
+	  'appServer',
       'watch'
     ]);
   });

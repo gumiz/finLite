@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 9000));
 app.use(express.static(__dirname + '/dist'));
 
 app.listen(app.get('port'), function() {
@@ -16,6 +16,9 @@ app.use(function(req,res,next){
   next();
 });
 
+app.get('/test', function(req, res) {
+	res.send('Test !');
+});
 app.get('/accounts', function(req, res) {
     var db = req.db;
     db.collection('accounts').find().toArray(function (err, items) {
