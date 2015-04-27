@@ -3,17 +3,17 @@ angular.module('finLiteApp').controller('AccountsCtrl', ['$scope', 'repositorySe
 
   var gotAccounts = function(accounts){
     $scope.accounts = accounts;
-    $scope.$apply();
+    //$scope.$apply();
   };
   var refresh = function() {
     repositoryService.getAccounts(gotAccounts);
   };
   $scope.refresh = refresh;
-  repositoryService.init(refresh);
 
   $scope.addAccount = function() {
+    debugger;
     repositoryService.addAccount($scope.newAccount, refresh);
   };
 
-
+  refresh();
 }]);

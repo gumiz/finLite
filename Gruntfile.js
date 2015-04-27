@@ -396,7 +396,7 @@ module.exports = function (grunt) {
 	  })
   });
 
-  
+
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -408,7 +408,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
-	  'appServer',
+	    'appServer',
       'watch'
     ]);
   });
@@ -449,7 +449,7 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-  
+
   grunt.registerTask('heroku', [
 	'compass:dist', 'autoprefixer', 'imagemin'
   ]);
