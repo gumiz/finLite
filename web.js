@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.set('port', (process.env.PORT || 9000));
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/dist'));
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
