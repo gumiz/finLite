@@ -2,15 +2,18 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Gruntfile.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/routes/accounts.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/routes/test.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/accounts.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/controllers/documents.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/dialogService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/notify.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/scripts/services/notifyService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/repositoryService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/accounts.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/documents.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/reports.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bower_components/bootstrap/less/variables.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />

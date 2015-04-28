@@ -22,9 +22,10 @@ app.use(function(req,res,next){
   next();
 });
 
-app.get('/test3', function(req, res) {
-	res.send('Test !');
-});
+//require('./routes/test')(app);
+//app.get('/test3', function(req, res) {
+//	res.send('Test !');
+//});
 
 app.get('/accounts', function(req, res) {
     var db = req.db;

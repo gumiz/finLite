@@ -19,9 +19,8 @@
     <!-- endbuild -->
   </head>
 
-  <body ng-app="finLiteApp">
+  <body ng-app="finLiteApp" ng-controller="MainCtrl">
   <div growl></div>
-
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -40,9 +39,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Konta</a></li>
-            <!--<li><a href="#about">Dokumenty</a></li>-->
-            <!--<li><a href="#contact">Analiza</a></li>-->
+            <li ng-class="getClass('/accounts')"><a href="#accounts">Konta</a></li>
+            <li ng-class="getClass('/documents')"><a href="#documents">Dokumenty</a></li>
+            <li ng-class="getClass('/reports')"><a href="#reports">Raporty</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           </ul>
@@ -50,54 +49,14 @@
       </div>
     </nav>
 
-    <div class="container" ng-controller="AccountsCtrl">
-      <!-- Main component for a primary marketing message or call to action -->
-      <div style="margin-top: 70px">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th class="col-md-1">Konto</th>
-              <th class="col-md-8">Opis</th>
-              <th class="col-md-2"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="ac in accounts">
-              <td>{{ac.name}}</td>
-              <td>{{ac.description}}</td>
-              <td style="text-align: center">
-                <button ng-click="deleteAccount(ac._id)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <br />
-        <table class="table">
-          <thead>
-          </thead>
-          <tbody>
-          <tr>
-            <td class="col-md-1">
-              <input class="form-control" ng-model="newAccount.name"/>
-            </td>
-            <td class="col-md-8">
-              <input class="form-control" ng-model="newAccount.description"/>
-            </td>
-            <td class="col-md-2" style="text-align: center">
-                <button ng-click="addAccount()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Nowe konto</button>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-
-        <p></p>
-      </div>
-
+    <div class="container">
+      <div ng-view style="margin-top: 70px"></div>
     </div> <!-- /container -->
-      <!-- Site footer -->
-      <footer class="footer">
-        <p>&copy; gumiz 2015</p>
-      </footer>
+
+    <!-- Site footer -->
+    <footer class="footer">
+      <p>&copy; gumiz 2015</p>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -132,10 +91,12 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/accounts.js"></script>
+        <script src="scripts/controllers/documents.js"></script>
         <script src="scripts/services/repositoryService.js"></script>
         <script src="scripts/services/ajaxService.js"></script>
         <script src="scripts/services/dialogService.js"></script>
         <script src="scripts/services/notify.js"></script>
+        <script src="scripts/controllers/reports.js"></script>
         <!-- endbuild -->
 </body>
 </html>

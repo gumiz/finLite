@@ -14,13 +14,46 @@ angular
     'angular-growl'
   ])
   .config(['$routeProvider', 'growlProvider', function ($routeProvider, growlProvider) {
+    growlProvider.globalTimeToLive(5000);
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/documents', {
+        templateUrl: 'views/documents.html',
+        controller: 'DocumentsCtrl'
+      })
+      .when('/accounts', {
+        templateUrl: 'views/accounts.html',
+        controller: 'AccountsCtrl'
+      })
+      .when('/reports', {
+        templateUrl: 'views/reports.html',
+        controller: 'ReportsCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/accounts'
       });
-    growlProvider.globalTimeToLive(5000);
+  }])
+  .directive('autoActive', ['$location', function ($location) {
+    return {
+      restrict: 'A',
+      scope: false,
+      link: function (scope, element) {
+        function setActive() {
+          var path = $location.path();
+          if (path) {
+            angular.forEach(element.find('li'), function (li) {
+              var anchor = li.querySelector('a');
+              if (anchor.href.match('#' + path + '(?=\\?|$)')) {
+                angular.element(li).addClass('active');
+              } else {
+                angular.element(li).removeClass('active');
+              }
+            });
+          }
+        }
+
+        setActive();
+
+        scope.$on('$locationChangeSuccess', setActive);
+      }
+    }
   }]);
