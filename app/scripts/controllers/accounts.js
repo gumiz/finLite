@@ -1,9 +1,9 @@
 'use strict';
-angular.module('finLiteApp').controller('AccountsCtrl', ['$scope', 'repositoryService', function ($scope, repositoryService) {
+angular.module('finLiteApp').controller('AccountsCtrl', ['$scope', 'repositoryService', 'dialogService', 'notify', function ($scope, repositoryService, dialogService, notify) {
 
   var gotAccounts = function(accounts){
     $scope.accounts = accounts;
-    //$scope.$apply();
+    notify.info('odświeżono dane');
   };
   var refresh = function() {
     repositoryService.getAccounts(gotAccounts);
@@ -11,8 +11,15 @@ angular.module('finLiteApp').controller('AccountsCtrl', ['$scope', 'repositorySe
   $scope.refresh = refresh;
 
   $scope.addAccount = function() {
-    debugger;
     repositoryService.addAccount($scope.newAccount, refresh);
+  };
+
+  var deleteAccount = function(id){
+    return function() {return repositoryService.deleteAccount(id, refresh)};
+  };
+
+  $scope.deleteAccount = function(id) {
+    dialogService.confirmation('Czy na pewno chcesz usunąć to konto?', deleteAccount(id));
   };
 
   refresh();

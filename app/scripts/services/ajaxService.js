@@ -1,5 +1,5 @@
 /*global appServices, $*/
-  angular.module('finLiteApp').service('ajaxService', ['$http', '$rootScope', 'notifyService', '$q', function ($http, $rootScope, notifyService, $q) {
+  angular.module('finLiteApp').service('ajaxService', ['$http', '$rootScope', 'notify', '$q', function ($http, $rootScope, notify, $q) {
         "use strict";
 
     var doPost = function (url, dataToSend, blockUi) {
@@ -7,10 +7,12 @@
         var def = $q.defer();
         $http.post(url, dataToSend)
             .success(function(data){
+                debugger;
                 decrementAsyncRequestCount(blockUi);
                 def.resolve(data);
             })
             .error(function(data, status){
+                debugger;
                 decrementAsyncRequestCount(blockUi);
                 handleRequestFail(def, status, data);
             });
@@ -46,7 +48,7 @@
 
     function handleRequestFail(deferred, status, message) {
         var error = message || "Wystąpił błąd podczas przetwarzania";
-	    notifyService.showErrorMessage(error);
+      notify.error(error);
         deferred.reject(status);
     }
 

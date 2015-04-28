@@ -6,8 +6,12 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   };
 
   var addAccount = function(item, successFunc) {
-    debugger;
     ajaxService.doPostWithBlock('addAccount', item).then(successFunc);
+  };
+
+  var deleteAccount = function(ident, successFunc) {
+    debugger;
+    ajaxService.doPostWithBlock('deleteAccount', {id: ident}).then(successFunc);
   };
 
   function init(success) {
@@ -15,6 +19,7 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
 
   return {
     addAccount: addAccount,
+    deleteAccount: deleteAccount,
     getAccounts: getAccounts,
     init: init
   }

@@ -9,9 +9,11 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngDialog',
+    'angular-growl'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', 'growlProvider', function ($routeProvider, growlProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -20,4 +22,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+    growlProvider.globalTimeToLive(5000);
+  }]);

@@ -9,6 +9,9 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
+    <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -17,7 +20,9 @@
   </head>
 
   <body ng-app="finLiteApp">
-    <!--[if lt IE 7]>
+  <div growl></div>
+
+  <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
@@ -36,8 +41,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Konta</a></li>
-            <li><a href="#about">Dokumenty</a></li>
-            <li><a href="#contact">Analiza</a></li>
+            <!--<li><a href="#about">Dokumenty</a></li>-->
+            <!--<li><a href="#contact">Analiza</a></li>-->
           </ul>
           <ul class="nav navbar-nav navbar-right">
           </ul>
@@ -48,37 +53,42 @@
     <div class="container" ng-controller="AccountsCtrl">
       <!-- Main component for a primary marketing message or call to action -->
       <div style="margin-top: 70px">
-        <table class="table table-striped" style="min-width: 200px">
+        <table class="table table-striped">
           <thead>
             <tr>
-              <th>Konto</th>
-              <th>Opis</th>
+              <th class="col-md-1">Konto</th>
+              <th class="col-md-8">Opis</th>
+              <th class="col-md-2"></th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="ac in accounts">
               <td>{{ac.name}}</td>
               <td>{{ac.description}}</td>
+              <td style="text-align: center">
+                <button ng-click="deleteAccount(ac._id)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+              </td>
             </tr>
           </tbody>
         </table>
         <br />
-        <table class="table table-striped" style="min-width: 200px">
+        <table class="table">
           <thead>
           </thead>
           <tbody>
           <tr>
-            <td>
-              <input ng-model="newAccount.name" />
+            <td class="col-md-1">
+              <input class="form-control" ng-model="newAccount.name"/>
             </td>
-            <td>
-              <input ng-model="newAccount.description" />
+            <td class="col-md-8">
+              <input class="form-control" ng-model="newAccount.description"/>
+            </td>
+            <td class="col-md-2" style="text-align: center">
+                <button ng-click="addAccount()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Nowe konto</button>
             </td>
           </tr>
           </tbody>
         </table>
-        <a class="btn btn-lg btn-primary" role="button" ng-click="addAccount()">Dodaj &raquo;</a>
-        <a class="btn btn-lg btn-primary" role="button" ng-click="refresh()">odśwież</a>
 
         <p></p>
       </div>
@@ -113,6 +123,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ngDialog/js/ngDialog.js"></script>
+    <script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -122,7 +134,8 @@
         <script src="scripts/controllers/accounts.js"></script>
         <script src="scripts/services/repositoryService.js"></script>
         <script src="scripts/services/ajaxService.js"></script>
-        <script src="scripts/services/notifyService.js"></script>
+        <script src="scripts/services/dialogService.js"></script>
+        <script src="scripts/services/notify.js"></script>
         <!-- endbuild -->
 </body>
 </html>

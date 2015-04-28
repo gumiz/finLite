@@ -5,9 +5,12 @@
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/accounts.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/services/dialogService.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/services/notify.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/notifyService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/services/repositoryService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bower_components/bootstrap/less/variables.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web.js" charset="UTF-8" />
   </component>
 </project>
