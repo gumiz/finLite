@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "body-parser": "^1.12.3",
-    "express": "^4.12.3",
-    "mongoskin": "*"
+    "mongodb": "1.4.x",
+    "mongoskin": "1.4.x"
   },
   "private": true,
   "devDependencies": {

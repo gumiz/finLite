@@ -7,18 +7,14 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-//app.use(express.json());
-//app.use(express.urlencoded());
-
 app.set('port', (process.env.PORT || 9000));
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/app'));
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
 
 var mongo = require('mongoskin');
-//var db = mongo.db("mongodb://localhost:27017/finLiteDb", {native_parser:true});
 var db = mongo.db("mongodb://finlite:1@ds055689.mongolab.com:55689/finlite", {native_parser:true});
 
 app.use(function(req,res,next){
