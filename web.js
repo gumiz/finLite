@@ -9,7 +9,7 @@ app.use(function(req,res,next){
   next();
 });
 
-require('routes/accountsRoute')(app);
+require('./routes/accountsRoute')(app);
 
 app.use(bodyParser.urlencoded({
   extended: true
