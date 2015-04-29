@@ -6,6 +6,7 @@ angular.module('finLiteApp').controller('AccountsCtrl', ['$scope', 'repositorySe
     notify.info('odświeżono dane');
   };
   var refresh = function() {
+    debugger;
     repositoryService.getAccounts(gotAccounts);
   };
   $scope.refresh = refresh;
