@@ -1,0 +1,41 @@
+<div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="col-md-1">Konto</th>
+        <th class="col-md-8">Opis</th>
+        <th class="col-md-2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="ac in accounts">
+        <td>{{ac.name}}</td>
+        <td>{{ac.description}}</td>
+        <td style="text-align: center">
+          <button ng-click="deleteAccount(ac._id)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <br />
+    <table class="table">
+      <thead>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="col-md-1">
+          <input class="form-control" ng-model="newAccount.name"/>
+        </td>
+        <td class="col-md-8">
+          <input class="form-control" ng-model="newAccount.description"/>
+        </td>
+        <td class="col-md-2" style="text-align: center">
+          <button ng-click="addAccount()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Nowe konto</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p></p>
+  </div>
+
