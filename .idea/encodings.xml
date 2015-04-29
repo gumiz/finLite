@@ -16,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/app/views/documents.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/reports.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bower_components/bootstrap/less/variables.less" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dist/views/accounts.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node_modules/mongodb/node_modules/bson/ext/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node_modules/routes/accountsRoute.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />

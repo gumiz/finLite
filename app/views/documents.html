@@ -1,3 +1,61 @@
 <div>
-  We added angular-route.js to index.html and created a new phonecatControllers module in controllers.js. That's not all we need to do to be able to use their code, however. We also have to add the modules as dependencies of our app. By listing these two modules as dependencies of phonecatApp, we can use the directives and services they provide.
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="col-md-1">Numer</th>
+      <th class="col-md-2">Nazwa</th>
+      <th class="col-md-2">Data</th>
+      <th class="col-md-1">Konto</th>
+      <th class="col-md-2">Kwota</th>
+      <th class="col-md-3">Opis</th>
+      <th class="col-md-1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="ac in documents">
+      <td>{{ac.number}}</td>
+      <td>{{ac.name}}</td>
+      <td>{{ac.date}}</td>
+      <td>{{ac.account}}</td>
+      <td>{{ac.price}}</td>
+      <td>{{ac.description}}</td>
+      <td style="text-align: center">
+        <button ng-click="deleteDocument(ac._id)" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br />
+  <table class="table">
+    <thead>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="col-md-1">
+        <input class="form-control" ng-model="newDocument.number"/>
+      </td>
+      <td class="col-md-2">
+        <input class="form-control" ng-model="newDocument.name"/>
+      </td>
+      <td class="col-md-2">
+        <input class="form-control" ng-model="newDocument.date"/>
+      </td>
+      <td class="col-md-1">
+        <input class="form-control" ng-model="newDocument.account"/>
+      </td>
+      <td class="col-md-2">
+        <input class="form-control" ng-model="newDocument.price"/>
+      </td>
+      <td class="col-md-3">
+        <input class="form-control" ng-model="newDocument.description"/>
+      </td>
+      <td class="col-md-1" style="text-align: center">
+        <button ng-click="addDocument()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Dokument</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p></p>
 </div>
+

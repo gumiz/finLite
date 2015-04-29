@@ -1,23 +1,23 @@
 module.exports = function(app) {
-  //app.get('/accounts', function (req, res) {
+  //app.get('/documents', function (req, res) {
   //  var db = req.db;
-  //  db.collection('accounts').find().toArray(function (err, items) {
+  //  db.collection('documents').find().toArray(function (err, items) {
   //    res.json(items);
   //  });
   //});
   //
-  //app.post('/addAccount', function (req, res) {
+  //app.post('/addDocument', function (req, res) {
   //  var db = req.db;
-  //  db.collection('accounts').insert(req.body, function (err, result) {
+  //  db.collection('documents').insert(req.body, function (err, result) {
   //    res.send(
   //      (err === null) ? {msg: ''} : {msg: err}
   //    );
   //  });
   //});
   //
-  //app.post('/deleteAccount', function (req, res) {
+  //app.post('/deleteDocument', function (req, res) {
   //  var db = req.db;
-  //  db.collection('accounts').removeById(req.body.id, function (err, result) {
+  //  db.collection('documents').removeById(req.body.id, function (err, result) {
   //    res.send((result === 1) ? {msg: ''} : {msg: 'error: ' + err});
   //  });
   //});

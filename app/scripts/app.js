@@ -16,20 +16,20 @@ angular
   .config(['$routeProvider', 'growlProvider', function ($routeProvider, growlProvider) {
     growlProvider.globalTimeToLive(5000);
     $routeProvider
-      .when('/documents', {
-        templateUrl: 'views/documents.html',
-        controller: 'DocumentsCtrl'
-      })
       .when('/accounts', {
         templateUrl: 'views/accounts.html',
         controller: 'AccountsCtrl'
+      })
+      .when('/documents', {
+        templateUrl: 'views/documents.html',
+        controller: 'DocumentsCtrl'
       })
       .when('/reports', {
         templateUrl: 'views/reports.html',
         controller: 'ReportsCtrl'
       })
       .otherwise({
-        redirectTo: '/accounts'
+        redirectTo: '/documents'
       });
   }])
   .directive('autoActive', ['$location', function ($location) {
