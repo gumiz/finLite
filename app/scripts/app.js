@@ -11,7 +11,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngDialog',
-    'angular-growl'
+    'angular-growl',
+    'ui.bootstrap'
   ])
   .config(['$routeProvider', 'growlProvider', function ($routeProvider, growlProvider) {
     growlProvider.globalTimeToLive(5000);

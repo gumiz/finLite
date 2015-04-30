@@ -1,7 +1,7 @@
 'use strict';
 angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService', function ($http, ajaxService) {
 
-  var getAccount = function(successFun) {
+  var getAccounts = function(successFun) {
     ajaxService.doGetWithBlock('getAccounts').then(successFun);
   };
 
@@ -13,7 +13,7 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
     ajaxService.doPostWithBlock('deleteAccounts', {id: ident}).then(successFunc);
   };
 
-  var getDocument = function(successFun) {
+  var getDocuments = function(successFun) {
     ajaxService.doGetWithBlock('getDocuments').then(successFun);
   };
 
@@ -28,9 +28,9 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   return {
     addAccount: addAccount,
     deleteAccount: deleteAccount,
-    getAccount: getAccount,
+    getAccounts: getAccounts,
     addDocument: addDocument,
     deleteDocument: deleteDocument,
-    getDocument: getDocument
+    getDocuments: getDocuments
   }
 }]);

@@ -19,7 +19,7 @@
     <!-- endbuild -->
   </head>
 
-  <body ng-app="finLiteApp" ng-controller="MainCtrl" ng-cloak>
+  <body ng-app="finLiteApp" ng-controller="MainCtrl" ng-controller="DatepickerCtrl as datePicker" ng-cloak>
   <div growl></div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -84,6 +84,9 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/ngDialog/js/ngDialog.js"></script>
     <script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -92,11 +95,13 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/accounts.js"></script>
         <script src="scripts/controllers/documents.js"></script>
+        <script src="scripts/controllers/reports.js"></script>
         <script src="scripts/services/repositoryService.js"></script>
         <script src="scripts/services/ajaxService.js"></script>
         <script src="scripts/services/dialogService.js"></script>
         <script src="scripts/services/notify.js"></script>
-        <script src="scripts/controllers/reports.js"></script>
+        <script src="scripts/services/datepicker.js"></script>
+        <script src="scripts/services/dateUtils.js"></script>
         <!-- endbuild -->
 </body>
 </html>
