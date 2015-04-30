@@ -82,4 +82,11 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  .col-md-0 {
+    width: 5%;
+  }
+  .col-xs-0 {
+    width: 5%;
+  }
 }

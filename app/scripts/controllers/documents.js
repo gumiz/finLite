@@ -1,21 +1,26 @@
 'use strict';
 
 angular.module('finLiteApp').controller('DocumentsCtrl', ['$scope', 'repositoryService', 'dialogService', 'notify', 'datepickerService', 'dateUtils', function ($scope, repositoryService, dialogService, notify, datepickerService, dateUtils) {
+  function cleanNewDocument() {
+    $scope.newDocument = {};
+  }
+  cleanNewDocument();
   $scope.newDocument = {};
   var gotDocuments = function (documents) {
     $scope.documents = documents;
-    notify.info('odświeżono dane');
   };
   var refresh = function () {
     repositoryService.getDocuments(gotDocuments);
   };
   $scope.refresh = refresh;
 
+
   $scope.addDocument = function () {
     setAutoNumber();
     fixPrice();
     $scope.newDocument.date = dateUtils.dateToString($scope.newDocument.date);
     repositoryService.addDocument($scope.newDocument, refresh);
+    cleanNewDocument();
   };
 
   var deleteAccount = function (id) {
