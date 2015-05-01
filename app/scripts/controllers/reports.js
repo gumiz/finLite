@@ -1,9 +1,9 @@
 'use strict';
+angular.module('finLiteApp').controller('ReportsCtrl', ['$scope', 'repositoryService', function ($scope, repositoryService) {
 
-angular.module('finLiteApp').controller('ReportsCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  var gotAccounts = function(accounts){
+    $scope.accounts = accounts;
+  };
+  repositoryService.getAccounts(gotAccounts);
+
+}]);
