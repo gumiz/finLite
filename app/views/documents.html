@@ -1,17 +1,15 @@
-<div class="row col-xs-12 pull-right flo" style="margin-top: -60px; margin-right: 40px; z-index: 9000">
-  <div id="custom-search-input ">
-    <div class="input-group col-xs-3 pull-right">
-      <input type="text" class="col-xs-3 search-query form-control" placeholder="Szukaj" ng-model="documentSearch"/>
+
+<div>
+  <div style="z-index: 9000">
+      <div class="input-group col-xs-3 pull-right">
+        <input type="text" class="col-xs-3 search-query form-control" placeholder="Szukaj" ng-model="documentSearch"/>
         <span class="input-group-btn">
-          <button class="btn btn-primary" type="button">
+          <button class="btn btn-success" type="button">
             <span class=" glyphicon glyphicon-search"></span>
           </button>
         </span>
-    </div>
+      </div>
   </div>
-</div>
-
-<div>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -20,8 +18,8 @@
       <th class="col-xs-2 text-center">Numer</th>
       <th class="text-center">Treść</th>
       <th class="col-xs-1 text-center" style="width: 12%">Kwota</th>
-      <th class="col-xs-1 text-center">Wn</th>
-      <th class="col-xs-1 text-center">Ma</th>
+      <th class="col-sm-1 text-center" style="width: 10%">Wn</th>
+      <th class="col-sm-1 text-center" style="width: 10%">Ma</th>
       <th class="col-xs-0 text-center"></th>
     </tr>
     </thead>
@@ -35,7 +33,7 @@
       <td class="text-center">{{ac.accountDt}}</td>
       <td class="text-center">{{ac.accountCt}}</td>
       <td style="text-align: center">
-        <button ng-click="deleteDocument(ac._id)" class="btn btn-default btn-sm"><span
+        <button ng-click="deleteDocument(ac._id)" class="btn btn-block btn-sm"><span
           class="glyphicon glyphicon-remove"></span></button>
       </td>
     </tr>
@@ -55,7 +53,7 @@
                  is-open="datepicker.opened" datepicker-options="datepicker.dateOptions" ng-required="true"
                  clear-text="Wyczyść" current-text="Dzisiaj" close-text="Zamknij"/>
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="datepicker.open($event)"><i
+                <button type="button" class="btn btn-success" ng-click="datepicker.open($event)"><i
                   class="glyphicon glyphicon-calendar"></i></button>
               </span>
         </p>
@@ -69,18 +67,18 @@
       <td class="col-xs-1" style="width: 12%">
         <input class="form-control" ng-model="newDocument.price"/>
       </td>
-      <td class="col-xs-1">
+      <td class="col-sm-1" style="width: 10%">
         <select class="form-control" ng-options="item.name as item.name + ': ' + item.description for item in accounts"
                 ng-model="newDocument.accountDt" required>
         </select>
       </td>
-      <td class="col-xs-1">
+      <td class="col-sm-1" style="width: 10%">
         <select class="form-control" ng-options="item.name as item.name + ': ' + item.description for item in accounts"
                 ng-model="newDocument.accountCt" required>
         </select>
       </td>
       <td class="col-xs-0" style="text-align: center">
-        <button ng-click="addDocument()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>
+        <button ng-click="addDocument()" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>
         </button>
       </td>
     </tr>
