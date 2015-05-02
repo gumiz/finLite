@@ -29,8 +29,8 @@
       <td>{{ac.number}}</td>
       <td>{{ac.description}}</td>
       <td class="text-right">{{ac.price | currency : ""}}</td>
-      <td class="text-center">{{ac.accountDt}}</td>
-      <td class="text-center">{{ac.accountCt}}</td>
+      <td class="text-center text-warning">{{ac.accountDt}}</td>
+      <td class="text-center text-info">{{ac.accountCt}}</td>
       <td style="text-align: center">
         <button ng-click="deleteDocument(ac._id)" class="btn btn-block btn-sm"><span
           class="glyphicon glyphicon-remove"></span></button>

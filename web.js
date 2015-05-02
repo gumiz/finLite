@@ -11,5 +11,6 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
 
+var _ = require('./bower_components/underscore/underscore');
 require('./server/config/mongoConfig')(app);
-require('./server/controllers/serverServices')(app);
+require('./server/controllers/serverServices')(app, _);

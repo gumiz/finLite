@@ -89,4 +89,7 @@ body {
   .col-xs-0 {
     width: 5%;
   }
+  .table-border-top {
+    border-top: 1px solid #676a7d;
+  }
 }

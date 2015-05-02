@@ -1,6 +1,6 @@
 <div style="z-index: 9000">
   <div class="input-group col-xs-3 pull-right">
-    <input type="text" class="col-xs-3 search-query form-control" placeholder="Szukaj" ng-model="reportSearch"/>
+    <input type="text" class="col-xs-3 search-query form-control" placeholder="Szukaj konta" ng-model="reportSearch"/>
         <span class="input-group-btn">
           <button class="btn btn-success" type="button">
             <span class=" glyphicon glyphicon-search"></span>
@@ -8,14 +8,41 @@
         </span>
   </div>
 </div>
-
 <br/>
 <br/>
 <br/>
-<div class="container">
+<div class="container" style="font-size: 80%;">
   <div class="row">
-    <div ng-repeat="acc in accounts | filter: reportSearch" class="col-sm-5 col-md-3 container account-block" style="margin: 10px; padding: 20px; background: #f8f5f0;">
-      <p class="text-center"><strong>{{acc.name}}</strong></p>
+    <div ng-repeat="rep in reports | filter: reportSearch" class="col-md-5 container" style="margin: 10px; padding: 10px; background: #f8f5f0;">
+      <h5>{{rep.accountName}}</h5>
+      <!--WN-->
+      <div class="col-xs-6 text-warning" style="float: left">
+        <span class="text-center"><strong>wn</strong></span>
+        <table class="table-border-top">
+          <tr ng-repeat="d in rep.items.dt">
+            <td class="text-left col-xs-4">{{d.id}}</td>
+            <td class="text-right col-xs-4">{{d.price | currency: ""}}</td>
+          </tr>
+          <tr>
+            <td class="text-left col-xs-4 table-border-top"></td>
+            <td class="text-right col-xs-4 table-border-top"><strong>{{rep.items.dt | total : 'price' | currency: ""}}</strong></td>
+          </tr>
+        </table>
+      </div>
+      <!--MA-->
+      <div class="col-xs-6 text-info" style="float: left">
+        <span class="text-center"><strong>ma</strong></span>
+        <table class="table-border-top">
+          <tr ng-repeat="c in rep.items.ct">
+            <td class="text-left col-xs-4">{{c.id}}</td>
+            <td class="text-right col-xs-4">{{c.price | currency: ""}}</td>
+          </tr>
+          <tr>
+            <td class="text-left col-xs-4 table-border-top"></td>
+            <td class="text-right col-xs-4 table-border-top"><strong>{{rep.items.ct | total : 'price' | currency: ""}}</strong></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

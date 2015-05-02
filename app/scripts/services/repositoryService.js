@@ -25,12 +25,16 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
     ajaxService.doPostWithBlock('deleteDocuments', {id: ident}).then(successFunc);
   };
 
+  var getReports = function(successFunc) {
+    ajaxService.doGetWithBlock('getReports').then(successFunc);
+  };
   return {
     addAccount: addAccount,
     deleteAccount: deleteAccount,
     getAccounts: getAccounts,
     addDocument: addDocument,
     deleteDocument: deleteDocument,
-    getDocuments: getDocuments
+    getDocuments: getDocuments,
+    getReports: getReports
   }
 }]);
