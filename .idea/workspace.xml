@@ -5,19 +5,15 @@
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.2cea9ab0.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.89b76826.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.b8e5a0e5.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.bff0aa7b.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.c271f06b.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.2e197a82.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.b3fcfba9.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.e6918fc8.css" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.f82d74d8.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/documents.html" afterPath="$PROJECT_DIR$/app/views/documents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports.html" afterPath="$PROJECT_DIR$/app/views/reports.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/reports.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/reports.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/repositoryService.js" afterPath="$PROJECT_DIR$/app/scripts/services/repositoryService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/serverServices.js" afterPath="$PROJECT_DIR$/server/controllers/serverServices.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/documents.html" afterPath="$PROJECT_DIR$/dist/views/documents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/reports.html" afterPath="$PROJECT_DIR$/dist/views/reports.html" />
     </list>
     <ignored path="finLight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.25897714">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -64,16 +60,16 @@
         <entry file="file://$PROJECT_DIR$/server/controllers/serverServices.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <caret line="14" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reports.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.03807391">
+            <state vertical-scroll-proportion="-1.3076923">
               <caret line="2" column="91" selection-start-line="2" selection-start-column="91" selection-end-line="2" selection-end-column="91" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -659,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/bower_components/bootstrap/dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44396082">
-          <caret line="546" column="31" selection-start-line="546" selection-start-column="31" selection-end-line="547" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/bootstrap/less/bootstrap.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.3333335">
@@ -850,14 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/serverServices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -901,14 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/reports.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -919,7 +892,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03807391">
+        <state vertical-scroll-proportion="-1.3076923">
           <caret line="2" column="91" selection-start-line="2" selection-start-column="91" selection-end-line="2" selection-end-column="91" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -928,6 +901,22 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/serverServices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25897714">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
