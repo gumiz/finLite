@@ -2,10 +2,11 @@
   "name": "finlite",
   "version": "0.0.0",
   "dependencies": {
-    "express": "^4.12.3",
     "body-parser": "^1.12.3",
+    "express": "^4.12.3",
     "mongodb": "1.4.x",
-    "mongoskin": "1.4.x"
+    "mongoskin": "1.4.x",
+    "underscore": "^1.8.3"
   },
   "private": true,
   "devDependencies": {
