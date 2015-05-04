@@ -3,34 +3,39 @@ module.exports = function(app, _) {
   prepareGenericRoutes('Accounts');
   prepareGenericRoutes('Documents');
 
-  function getAccounts(items) {
-    var accountsAll = [];
-    _.each(items, function (item) {
-      accountsAll.push(item.accountDt);
-      accountsAll.push(item.accountCt);
+  function getAccounts(db, req, res, success) {
+    var db = req.db;
+    db.collection('getAccounts').find().toArray(function (err, items) {
+      success(db, res, items);
     });
-    return _.uniq(accountsAll);
   }
+
+    function getReports(db, res, accounts) {
+      db.collection('Documents').find().toArray(function (err, items) {
+        var acc = {};
+        _.each(items, function (item) {
+          var newItem = {id: item.autoNumber, number: item.number, price: item.price};
+          if (acc[item.accountCt] == undefined) {
+            acc[item.accountCt] = {dt: [], ct: []}
+          }
+          if (acc[item.accountDt] == undefined) {
+            acc[item.accountDt] = {dt: [], ct: []}
+          }
+          acc[item.accountCt].ct.push(newItem);
+          acc[item.accountDt].dt.push(newItem);
+        });
+        var accountNames = _.keys(acc);
+        var result = [];
+        _.each(accountNames, function (name) {
+          result.push({accountName: name, items: acc[name]});
+        });
+        res.json(result);
+      });
+    }
 
   app.get('/getReports', function (req, res) {
     var db = req.db;
-    db.collection('Documents').find().toArray(function (err, items) {
-      var acc = {};
-      //var acc = getAccounts(items);
-      _.each(items, function(item) {
-          var newItem = {id: item.autoNumber, number: item.number, price: item.price};
-          if (acc[item.accountCt] == undefined) { acc[item.accountCt] = {dt: [], ct: []} }
-          if (acc[item.accountDt] == undefined) { acc[item.accountDt] = {dt: [], ct: []} }
-          acc[item.accountCt].ct.push(newItem);
-          acc[item.accountDt].dt.push(newItem);
-      });
-      var accountNames = _.keys(acc);
-      var result = [];
-      _.each(accountNames, function(name) {
-        result.push({accountName: name, items: acc[name]});
-      });
-      res.json(result);
-    });
+    getAccounts(db, req, res, getReports);
   });
 
 
