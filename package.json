@@ -1,12 +1,16 @@
 {
   "name": "finlite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.12.3",
     "express": "^4.12.3",
     "mongodb": "1.4.x",
     "mongoskin": "1.4.x",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "ejs" : "~0.8.5",
+    "connect-flash" : "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "express-session": "~1.0.0"
   },
   "private": true,
   "devDependencies": {

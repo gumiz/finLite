@@ -1,4 +1,6 @@
-module.exports = function(app, _) {
+module.exports = function (app, passport, _) {
+
+  var logout = require('express-passport-logout');
 
   prepareGenericRoutes('Accounts');
   prepareGenericRoutes('Documents');
@@ -10,37 +12,31 @@ module.exports = function(app, _) {
     });
   }
 
-    function getReports(db, res, accounts) {
-      db.collection('Documents').find().toArray(function (err, items) {
-        var acc = {};
-        _.each(items, function (item) {
-          var newItem = {id: item.autoNumber, number: item.number, price: item.price};
-          if (acc[item.accountCt] == undefined) {
-            acc[item.accountCt] = {dt: [], ct: []}
-          }
-          if (acc[item.accountDt] == undefined) {
-            acc[item.accountDt] = {dt: [], ct: []}
-          }
-          acc[item.accountCt].ct.push(newItem);
-          acc[item.accountDt].dt.push(newItem);
-        });
-        var accountNames = _.keys(acc);
-        var result = [];
-        _.each(accountNames, function (name) {
-          result.push({accountName: name, items: acc[name]});
-        });
-        res.json(result);
+  function getReports(db, res, accounts) {
+    db.collection('Documents').find().toArray(function (err, items) {
+      var acc = {};
+      _.each(items, function (item) {
+        var newItem = {id: item.autoNumber, number: item.number, price: item.price};
+        if (acc[item.accountCt] == undefined) {
+          acc[item.accountCt] = {dt: [], ct: []}
+        }
+        if (acc[item.accountDt] == undefined) {
+          acc[item.accountDt] = {dt: [], ct: []}
+        }
+        acc[item.accountCt].ct.push(newItem);
+        acc[item.accountDt].dt.push(newItem);
       });
-    }
-
-  app.get('/getReports', function (req, res) {
-    var db = req.db;
-    getAccounts(db, req, res, getReports);
-  });
-
+      var accountNames = _.keys(acc);
+      var result = [];
+      _.each(accountNames, function (name) {
+        result.push({accountName: name, items: acc[name]});
+      });
+      res.json(result);
+    });
+  }
 
   function prepareGenericRoutes(target) {
-    app.get('/get' + target, function (req, res) {
+    app.get('/get' + target, isLoggedIn, function (req, res) {
       var db = req.db;
       db.collection(target).find().toArray(function (err, items) {
         res.json(items);
@@ -63,4 +59,50 @@ module.exports = function(app, _) {
       });
     });
   }
+
+  app.get('/getReports', function (req, res) {
+    var db = req.db;
+    getAccounts(db, req, res, getReports);
+  });
+
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    } else {
+      req.flash('loginMessage', 'brak uprawnień.')
+      res.redirect('/login');
+    }
+  }
+
+  app.get('/', function (req, res) {
+    res.render('main.ejs', {
+      user: req.user,
+      message: ""
+    });
+  });
+
+  app.get('/login', function (req, res) {
+    console.log('get >> login');
+    res.render('login.ejs', {message: req.flash('loginMessage'), user: ""});
+  });
+
+  app.get('/logout', isLoggedIn, function(req, res) {
+    req.logOut();
+    res.redirect('/login');
+  });
+
+  //app.get('/accounts', isLoggedIn, function (req, res) {
+  //  res.render('main.ejs', {
+  //    user: req.user,
+  //    message: ""z
+  //  });
+  //});
+
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect: '/#accounts', // redirect to the secure profile section
+    failureRedirect: '/login', // redirect back to the signup page if there is an error
+    failureFlash: true // allow flash messages
+  }));
+
 };

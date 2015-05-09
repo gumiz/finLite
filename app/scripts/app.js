@@ -14,12 +14,24 @@ angular
     'angular-growl',
     'ui.bootstrap'
   ])
-  .config(['$routeProvider', 'growlProvider', function ($routeProvider, growlProvider) {
+  .config(['$routeProvider', 'growlProvider', '$locationProvider', function ($routeProvider, growlProvider, $locationProvider) {
     growlProvider.globalTimeToLive(5000);
     $routeProvider
+      .when('/', {
+        templateUrl: '../views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/login', {
+        templateUrl: '../views/login.html',
+        controller: 'LoginCtrl'
+      })
       .when('/accounts', {
         templateUrl: 'views/accounts.html',
         controller: 'AccountsCtrl'
+      })
+      .when('/logout', {
+        templateUrl: 'views/logout.html',
+        controller: 'LogoutCtrl'
       })
       .when('/documents', {
         templateUrl: 'views/documents.html',
@@ -30,8 +42,10 @@ angular
         controller: 'ReportsCtrl'
       })
       .otherwise({
-        redirectTo: '/documents'
+        templateUrl: '../views/login.html',
+        controller: 'LoginCtrl'
       });
+    $locationProvider.html5Mode(true);
   }])
   .directive('autoActive', ['$location', function ($location) {
     return {
@@ -60,7 +74,6 @@ angular
   }])
   .filter('total', function () {
     return function (input, property) {
-      debugger;
       var i = input instanceof Array ? input.length : 0;
       if (typeof property === 'undefined' || i === 0) {
         return i;

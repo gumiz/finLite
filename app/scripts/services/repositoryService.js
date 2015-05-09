@@ -2,7 +2,7 @@
 angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService', function ($http, ajaxService) {
 
   var getAccounts = function(successFun) {
-    ajaxService.doGetWithBlock('getAccounts').then(successFun);
+    ajaxService.doGet('getAccounts').then(successFun);
   };
 
   var addAccount = function(item, successFunc) {
@@ -14,7 +14,7 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   };
 
   var getDocuments = function(successFun) {
-    ajaxService.doGetWithBlock('getDocuments').then(successFun);
+    ajaxService.doGet('getDocuments').then(successFun);
   };
 
   var addDocument = function(item, successFunc) {

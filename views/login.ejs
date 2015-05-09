@@ -1,0 +1,148 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <base href="/" />
+  <meta charset="utf-8">
+  <title>login</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
+  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
+  <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/bootstrap.css"/>
+  <link rel="stylesheet" href="styles/bootswatch.min.css"/>
+  <!-- endbuild -->
+</head>
+
+<body>
+<div growl></div>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Fixed navbar -->
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#documents">FinLite</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li ng-class="getClass('/accounts')"><a href="accounts">Konta</a></li>
+        <li ng-class="getClass('/documents')"><a href="documents">Dokumenty</a></li>
+        <li ng-class="getClass('/reports')"><a href="reports">Raporty</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-class="getClass('/login')"><a href="login">Zaloguj</a></li>
+        <li ng-class="getClass('/logout')"><a href="logout">Wyloguj</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+  <div>
+    <div class="col-sm-6 col-sm-offset-3">
+
+      <h1><span class="fa fa-sign-in"></span> Logowanie</h1>
+
+      <!-- show any messages that come back with authentication -->
+      <% if (message.length > 0) { %>
+      <div class="alert alert-danger"><%= message %></div>
+      <% } %>
+
+      <!-- LOGIN FORM -->
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label>Użytkownik</label>
+          <input type="text" class="form-control" name="username">
+        </div>
+        <div class="form-group">
+          <label>Hasło</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-md">Login</button>
+      </form>
+    </div></div>
+</div>
+<!-- /container -->
+
+<!-- Site footer -->
+<footer class="footer">
+  <p>&copy; gumiz 2015</p>
+</footer>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/ngDialog/js/ngDialog.js"></script>
+<script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/accounts.js"></script>
+<script src="scripts/controllers/documents.js"></script>
+<script src="scripts/controllers/reports.js"></script>
+<script src="scripts/services/repositoryService.js"></script>
+<script src="scripts/services/ajaxService.js"></script>
+<script src="scripts/services/dialogService.js"></script>
+<script src="scripts/services/notify.js"></script>
+<script src="scripts/services/datepicker.js"></script>
+<script src="scripts/services/dateUtils.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<!-- endbuild -->
+</body>
+</html>
+
+
+

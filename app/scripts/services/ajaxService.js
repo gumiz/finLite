@@ -7,12 +7,10 @@
         var def = $q.defer();
         $http.post(url, dataToSend)
             .success(function(data){
-                debugger;
                 decrementAsyncRequestCount(blockUi);
                 def.resolve(data);
             })
             .error(function(data, status){
-                debugger;
                 decrementAsyncRequestCount(blockUi);
                 handleRequestFail(def, status, data);
             });
