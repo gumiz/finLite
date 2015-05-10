@@ -12,7 +12,9 @@
     "underscore": "^1.8.3",
     "connect-flash" : "~0.1.1",
     "cookie-parser": "~1.0.0",
-    "express-session": "~1.0.0"
+    "express-session": "~1.0.0",
+    "bcrypt-nodejs" : "latest",
+
   },
   "private": true,
   "devDependencies": {
