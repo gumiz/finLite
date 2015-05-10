@@ -1,7 +1,5 @@
 module.exports = function (app, passport, _) {
 
-  var logout = require('express-passport-logout');
-
   prepareGenericRoutes('Accounts');
   prepareGenericRoutes('Documents');
 
@@ -60,7 +58,7 @@ module.exports = function (app, passport, _) {
     });
   }
 
-  app.get('/getReports', function (req, res) {
+  app.get('/getReports', isLoggedIn, function (req, res) {
     var db = req.db;
     getAccounts(db, req, res, getReports);
   });
@@ -76,31 +74,33 @@ module.exports = function (app, passport, _) {
   }
 
   app.get('/', function (req, res) {
-    res.render('main.ejs', {
-      user: req.user,
-      message: ""
+    res.render('index.ejs');
+  });
+
+  app.get('/login', function(req, res) {
+    res.render('login.ejs', { message: req.flash('loginMessage') });
+  });
+
+  app.get('/finlite', isLoggedIn, function(req, res) {
+    res.render('finlite.ejs', {
+      user : req.user // get the user out of session and pass to template
     });
   });
 
-  app.get('/login', function (req, res) {
-    console.log('get >> login');
-    res.render('login.ejs', {message: req.flash('loginMessage'), user: ""});
-  });
-
-  app.get('/logout', isLoggedIn, function(req, res) {
-    req.logOut();
-    res.redirect('/login');
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
   });
 
   //app.get('/accounts', isLoggedIn, function (req, res) {
-  //  res.render('main.ejs', {
+  //  res.render('finlite.ejs', {
   //    user: req.user,
   //    message: ""z
   //  });
   //});
 
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/#accounts', // redirect to the secure profile section
+    successRedirect: '/finlite', // redirect to the secure profile section
     failureRedirect: '/login', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));

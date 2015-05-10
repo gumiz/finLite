@@ -17,21 +17,13 @@ angular
   .config(['$routeProvider', 'growlProvider', '$locationProvider', function ($routeProvider, growlProvider, $locationProvider) {
     growlProvider.globalTimeToLive(5000);
     $routeProvider
-      .when('/', {
-        templateUrl: '../views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .when('/login', {
-        templateUrl: '../views/login.html',
-        controller: 'LoginCtrl'
+      .when('/finlite', {
+        templateUrl: 'views/reports.html',
+        controller: 'ReportsCtrl'
       })
       .when('/accounts', {
         templateUrl: 'views/accounts.html',
         controller: 'AccountsCtrl'
-      })
-      .when('/logout', {
-        templateUrl: 'views/logout.html',
-        controller: 'LogoutCtrl'
       })
       .when('/documents', {
         templateUrl: 'views/documents.html',
@@ -42,10 +34,9 @@ angular
         controller: 'ReportsCtrl'
       })
       .otherwise({
-        templateUrl: '../views/login.html',
-        controller: 'LoginCtrl'
+        templateUrl: 'views/reports.html',
+        controller: 'ReportsCtrl'
       });
-    $locationProvider.html5Mode(true);
   }])
   .directive('autoActive', ['$location', function ($location) {
     return {

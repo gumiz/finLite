@@ -3,7 +3,7 @@
 <head>
   <base href="/" />
   <meta charset="utf-8">
-  <title>login</title>
+  <title>index</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -42,7 +42,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#documents">FinLite</a>
+      <a class="navbar-brand" href="">FinLite</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -54,31 +54,11 @@
   </div>
 </nav>
 
-<div class="container">
-  <div>
-    <div class="col-sm-6 col-sm-offset-3">
-
-      <h1><span class="fa fa-sign-in"></span> Logowanie</h1>
-
-      <!-- show any messages that come back with authentication -->
-      <% if (message.length > 0) { %>
-      <div class="alert alert-danger"><%= message %></div>
-      <% } %>
-
-      <!-- LOGIN FORM -->
-      <form action="/login" method="post">
-        <div class="form-group">
-          <label>Użytkownik</label>
-          <input type="text" class="form-control" name="username">
-        </div>
-        <div class="form-group">
-          <label>Hasło</label>
-          <input type="password" class="form-control" name="password">
-        </div>
-
-        <button type="submit" class="btn btn-success btn-md">Login</button>
-      </form>
-    </div></div>
+<div class="container text-center" style="height: 400px">
+  <br/>
+  <h1>Witam w FinLite</h1>
+  <br/>
+  <a href="login">Zaloguj się</a>
 </div>
 <!-- /container -->
 
