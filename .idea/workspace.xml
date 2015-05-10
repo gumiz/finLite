@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9556175-338c-4a09-8e8a-f6b979cb3b5d" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\workspace\finLite\app\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\app\index_old.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\404.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\images\yeoman.c582c4d1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.27c49bd8.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.2cea9ab0.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.8499c4e7.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.89b76826.js" afterPath="" />
@@ -12,9 +24,17 @@
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.ce5e78b2.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.2e197a82.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.b3fcfba9.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.bafd4444.js" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.e6918fc8.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.eaba6af7.css" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.f82d74d8.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\vendor.1791efa1.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\views\accounts.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\views\documents.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\views\login.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\views\main.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\finLite\dist\views\reports.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
     <ignored path="finLight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,11 +91,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26651737">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33258426">
+              <caret line="246" column="30" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -596,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/bootstrap/dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -747,14 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8879217">
-          <caret line="453" column="4" selection-start-line="453" selection-start-column="4" selection-end-line="453" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/mongoConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.055495102">
@@ -841,8 +856,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26651737">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33258426">
+          <caret line="246" column="30" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="30" />
           <folding />
         </state>
       </provider>

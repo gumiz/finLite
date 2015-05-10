@@ -50,7 +50,8 @@
         <li ng-class="getClass('/reports')"><a href="#reports">Raporty</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a></a></li>
+        <li ng-class="getClass('/login')"><a href="login">Zaloguj</a></li>
+        <li ng-class="getClass('/logout')"><a href="logout">Wyloguj</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
@@ -114,6 +115,7 @@
 <script src="scripts/services/notify.js"></script>
 <script src="scripts/services/datepicker.js"></script>
 <script src="scripts/services/dateUtils.js"></script>
+<script src="scripts/controllers/login.js"></script>
 <!-- endbuild -->
 </body>
 </html>
