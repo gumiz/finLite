@@ -6,12 +6,12 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var session = require('express-session');
 var _ = require('underscore');
-var morgan = require('morgan');
+//var morgan = require('morgan');
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(morgan('dev')); // log every request to the console
+//app.use(morgan('dev')); // log every request to the console
 app.set('port', (process.env.PORT || 9000));
 
 app.listen(app.get('port'), function () {
@@ -32,4 +32,4 @@ app.use(flash());
 
 require('./server/controllers/serverServices')(app, passport, _);
 
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/dist'));
