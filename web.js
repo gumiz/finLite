@@ -33,6 +33,6 @@ app.use(flash());
 require('./server/controllers/serverServices')(app, passport, _);
 
 app.use(express.static(__dirname + '/dist'));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
-app.use('/scripts',  express.static(__dirname + '/dist/scripts'));
-app.use('/styles',  express.static(__dirname + '/dist/styles'));
+//app.use('/bower_components',  express.static(__dirname + '/dist/bower_components'));
+//app.use('/scripts',  express.static(__dirname + '/dist/scripts'));
+//app.use('/styles',  express.static(__dirname + '/dist/styles'));

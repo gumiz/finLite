@@ -23,7 +23,7 @@
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.f82d74d8.css" afterPath="" />
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\vendor.1791efa1.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
     </list>
     <ignored path="finLight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,7 +82,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-17.115385">
               <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
-              <folding />
+              <folding>
+                <marker date="1431454817240" expanded="true" signature="0:1286" placeholder="{&quot;name&quot;: &quot;finlite&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.758621">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.85294116">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,11 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7479407">
-              <caret line="463" column="46" selection-start-line="463" selection-start-column="46" selection-end-line="463" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="439" column="15" selection-start-line="439" selection-start-column="15" selection-end-line="439" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -211,13 +213,13 @@
         <option value="$PROJECT_DIR$/server/controllers/serverServices.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/logout.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/web.js" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/finlite.ejs" />
         <option value="$PROJECT_DIR$/server/config/passport.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/web.js" />
       </list>
     </option>
   </component>
@@ -826,22 +828,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.115385">
           <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+          <folding>
+            <marker date="1431454817240" expanded="true" signature="0:1286" placeholder="{&quot;name&quot;: &quot;finlite&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="439" column="15" selection-start-line="439" selection-start-column="15" selection-end-line="439" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.758621">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7479407">
-          <caret line="463" column="46" selection-start-line="463" selection-start-column="46" selection-end-line="463" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.85294116">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
