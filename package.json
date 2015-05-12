@@ -4,7 +4,6 @@
   "dependencies": {
     "bcrypt-nodejs": "latest",
     "body-parser": "^1.12.3",
-    "bower": "^1.4.1",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.0.0",
     "ejs": "~0.8.5",
@@ -46,6 +45,6 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   }
 }
