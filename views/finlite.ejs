@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>finlite</title>
+  <title>Finlite</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -50,7 +50,7 @@
         <li ng-class="getClass('/reports')"><a href="#reports">Raporty</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-class="getClass('/logout')"><a href="logout">Wyloguj <%= user.local.email %></a></li>
+        <li ng-class="getClass('/logout')"><a href="logout">Wyloguj: <%= user.local.email %></a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
@@ -66,7 +66,6 @@
   <p>&copy; gumiz 2015</p>
 </footer>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
   !function (A, n, g, u, l, a, r) {
     A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
@@ -75,7 +74,7 @@
       r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
   }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-XXXXX-X');
+  ga('create', 'UA-Finlite-X');
   ga('send', 'pageview');
 </script>
 

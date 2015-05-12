@@ -178,7 +178,9 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
-        src: ['<%= yeoman.app %>/index.html'],
+        src: [
+          '<%= yeoman.app %>/index.html'
+        ],
         ignorePath:  /\.\.\//
       },
       test: {
@@ -265,9 +267,9 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // concat: {
-    //   dist: {}
-    // },
+     concat: {
+       dist: {}
+     },
 
     imagemin: {
       dist: {
@@ -362,6 +364,12 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      all: {
+        expand: true,
+        cwd: '<%= yeoman.app %>',
+        dest: '<%= yeoman.dist %>',
+        src: '**/*'
       }
     },
 
@@ -429,19 +437,21 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
-    'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
-    'concat',
-    'ngAnnotate',
-    'copy:dist',
-    'cdnify',
-    'cssmin',
-    'uglify',
-    'filerev',
-    'usemin',
-    'htmlmin'
+    'copy:all'
+    //'wiredep',
+    //'useminPrepare',
+    //'concurrent:dist',
+    //'autoprefixer',
+    //'concat',
+    //'ngAnnotate',
+    //'copy:dist',
+    //'copy:stylesTest',
+    //'cdnify',
+    //'cssmin',
+    //'uglify',
+    //'filerev',
+    //'usemin',
+    //'htmlmin'
   ]);
 
   grunt.registerTask('default', [

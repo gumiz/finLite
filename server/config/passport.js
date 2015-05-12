@@ -14,7 +14,6 @@ function validatePassword(password, user) {
 module.exports = function (passport) {
 
   passport.serializeUser(function(user, done) {
-    console.log('serializing user: ' + user.id);
     done(null, user._id);
   });
 
@@ -31,8 +30,6 @@ module.exports = function (passport) {
     },
     function (req, username, password, done) {
       req.db.collection('users').findOne({ 'local.email' :  username }, function (err, user) {
-        console.log('passport user check');
-        console.log(user);
         // if there are any errors, return the error before anything else
         if (err)
           return done(err);
