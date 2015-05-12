@@ -2,26 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9556175-338c-4a09-8e8a-f6b979cb3b5d" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\images\yeoman.c582c4d1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.0c1e24e3.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.27c49bd8.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.2cea9ab0.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.8499c4e7.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.89b76826.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.b8e5a0e5.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.bff0aa7b.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.c271f06b.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\scripts.ce5e78b2.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.2e197a82.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.b3fcfba9.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\vendor.bafd4444.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.e6918fc8.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.eaba6af7.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\main.f82d74d8.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\workspace\finLite\dist\styles\vendor.1791efa1.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
     </list>
     <ignored path="finLight.iws" />
@@ -150,8 +130,8 @@
       <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8150163">
-              <caret line="462" column="32" selection-start-line="462" selection-start-column="32" selection-end-line="462" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.8335147">
+              <caret line="463" column="20" selection-start-line="463" selection-start-column="20" selection-end-line="463" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -843,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8150163">
-          <caret line="462" column="32" selection-start-line="462" selection-start-column="32" selection-end-line="462" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.8335147">
+          <caret line="463" column="20" selection-start-line="463" selection-start-column="20" selection-end-line="463" selection-end-column="20" />
           <folding />
         </state>
       </provider>
