@@ -460,7 +460,10 @@ module.exports = function (grunt) {
     'build'
   ]);
 
+  //grunt.registerTask('heroku', [
+  //  'compass:dist', 'autoprefixer', 'imagemin'
+  //]);
   grunt.registerTask('heroku', [
-    'compass:dist', 'autoprefixer', 'imagemin'
+    'clean:dist', 'copy:all'
   ]);
 };
