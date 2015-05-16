@@ -40,6 +40,14 @@ module.exports = function (app, passport, _) {
     });
   });
 
+  app.get('/getClient', isLoggedIn, function (req, res) {
+    var db = req.db;
+    var id = parseInt(req.query.id);
+    db.collection('Clients').findOne({"id": id},function (err, items) {
+      res.json(items);
+    });
+  });
+
   function prepareGenericRoutes(target) {
     app.get('/get' + target, isLoggedIn, function (req, res) {
       var db = req.db;
