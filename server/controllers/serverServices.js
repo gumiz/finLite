@@ -3,14 +3,14 @@ module.exports = function (app, passport, _) {
   prepareGenericRoutes('Accounts');
   prepareGenericRoutes('Documents');
 
-  function getAccounts(db, req, res, success) {
+  function getAccounts(req, res, success) {
     var db = req.db;
     db.collection('getAccounts').find().toArray(function (err, items) {
       success(db, res, items);
     });
   }
 
-  function getReports(db, res, accounts) {
+  function getReports(db, res) {
     db.collection('Documents').find().toArray(function (err, items) {
       var acc = {};
       _.each(items, function (item) {
@@ -32,6 +32,13 @@ module.exports = function (app, passport, _) {
       res.json(result);
     });
   }
+
+  app.get('/getClients', function (req, res) {
+    var db = req.db;
+    db.collection('Clients').find().toArray(function (err, items) {
+      res.json(items);
+    });
+  });
 
   function prepareGenericRoutes(target) {
     app.get('/get' + target, isLoggedIn, function (req, res) {
@@ -59,10 +66,8 @@ module.exports = function (app, passport, _) {
   }
 
   app.get('/getReports', isLoggedIn, function (req, res) {
-    var db = req.db;
-    getAccounts(db, req, res, getReports);
+    getAccounts(req, res, getReports);
   });
-
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
@@ -81,28 +86,23 @@ module.exports = function (app, passport, _) {
     res.render('login.ejs', { message: req.flash('loginMessage') });
   });
 
-  app.get('/finlite', isLoggedIn, function(req, res) {
+  app.get('/logout', isLoggedIn, function(req, res) {
+    req.logout();
+    res.render('index.ejs');
+  });
+
+  app.get('/:clientId', isLoggedIn, function (req, res) {
     res.render('finlite.ejs', {
-      user : req.user // get the user out of session and pass to template
+      user : req.user
     });
   });
 
-  app.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/');
-  });
-
-  //app.get('/accounts', isLoggedIn, function (req, res) {
-  //  res.render('finlite.ejs', {
-  //    user: req.user,
-  //    message: ""z
-  //  });
-  //});
-
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/finlite', // redirect to the secure profile section
     failureRedirect: '/login', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
-  }));
+  }),
+    function(req, res) {
+     res.redirect('/' + req.body.clientId);
+    });
 
 };

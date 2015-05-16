@@ -1,10 +1,9 @@
 'use strict';
-angular.module('finLiteApp').controller('LoginCtrl', ['$scope', 'ajaxService', 'notify', function ($scope, ajaxService, notify) {
-    $scope.user = {name: "", pass: ""};
+angular.module('finLiteApp').controller('LoginCtrl', ['$scope', 'repositoryService', function ($scope, repositoryService) {
 
-  //$scope.login = function() {
-  //  debugger;
-  //    var params = {username: $scope.user.name, password: $scope.user.pass};
-  //    ajaxService.doPost('login', params);
-  //  };
+  $scope.user = {name: "", pass: ""};
+  repositoryService.getClients(function(items){
+    $scope.clients = items
+  });
+
 }]);

@@ -28,6 +28,10 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   var getReports = function(successFunc) {
     ajaxService.doGetWithBlock('getReports').then(successFunc);
   };
+
+  var getClients = function(successFunc) {
+    ajaxService.doGetWithBlock('getClients').then(successFunc);
+  };
   return {
     addAccount: addAccount,
     deleteAccount: deleteAccount,
@@ -35,6 +39,7 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
     addDocument: addDocument,
     deleteDocument: deleteDocument,
     getDocuments: getDocuments,
-    getReports: getReports
+    getReports: getReports,
+    getClients: getClients
   }
 }]);
