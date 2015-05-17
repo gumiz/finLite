@@ -9,7 +9,6 @@ angular.module('finLiteApp').controller('MainCtrl', ['$scope', '$location', 'rep
       }
     };
     repositoryService.getClient(function(data){
-      debugger;
       $scope.client = data;
     });
   }]);

@@ -1,6 +1,11 @@
 'use strict';
 angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService', function ($http, ajaxService) {
 
+  var getIdFromUrl = function () {
+    var elems = window.location.href.split("/");
+    return elems[elems.length - 1];
+  };
+
   var getAccounts = function(successFun) {
     ajaxService.doGet('getAccounts').then(successFun);
   };
@@ -32,7 +37,14 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   var getClients = function(successFunc) {
     ajaxService.doGetWithBlock('getClients').then(successFunc);
   };
+
+  var getClient = function(successFunc) {
+    ajaxService.doGet('getClient').then(successFunc);
+  };
+
   return {
+    getClient: getClient,
+    getIdFromUrl: getIdFromUrl,
     addAccount: addAccount,
     deleteAccount: deleteAccount,
     getAccounts: getAccounts,

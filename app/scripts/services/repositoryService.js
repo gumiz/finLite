@@ -39,8 +39,7 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   };
 
   var getClient = function(successFunc) {
-    var par = getIdFromUrl();
-    ajaxService.doGet('getClient?id='+par).then(successFunc);
+    ajaxService.doGet('getClient').then(successFunc);
   };
 
   return {
