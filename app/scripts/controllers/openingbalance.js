@@ -7,10 +7,10 @@ angular.module('finLiteApp')
       $scope.openings = data;
     });
 
-    repositoryService.getOpenings( function(data){
-      debugger;
-      $scope.test = data;
-    });
+    //repositoryService.getOpenings( function(data){
+    //  debugger;
+    //  $scope.test = data;
+    //});
 
     $scope.saveOpenings = function() {
       repositoryService.saveOpenings($scope.openings, confirmSaved);
