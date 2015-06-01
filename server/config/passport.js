@@ -22,7 +22,7 @@ module.exports = function (passport) {
         _id: '554bc303995bea9c1a0fff2f',
         local: {
           password: '$2a$08$IetmCT0EYaLWXNauVgI1j.EC1MYyVwSY2hd8jd1RunbCVENDX6EoW',
-          email: 'ania',
+          username: 'ania',
           id: 1
         },
         __v: 0 });
@@ -32,7 +32,7 @@ module.exports = function (passport) {
       passReqToCallback: true
     },
     function (req, username, password, done) {
-      req.db.collection('users').findOne({ 'local.email' :  username }, function (err, user) {
+      req.db.collection('users').findOne({ 'local.username' :  username }, function (err, user) {
         // if there are any errors, return the error before anything else
         if (err)
           return done(err);

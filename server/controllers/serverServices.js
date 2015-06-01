@@ -44,10 +44,33 @@ module.exports = function (app, passport, _) {
     });
   });
 
+  app.post('/saveOpenings', function (req, res) {
+    var db = req.db;
+    var openings = {
+      year: req.session.year,
+      clientId: req.session.clientIdent,
+      userId: req.session.user.id,
+      openings: req.body
+    };
+    db.collection('OpeningBalance').insert(openings, function (err, result) {
+      res.send(
+        (err === null) ? {msg: ''} : {msg: err}
+      );
+    });
+  });
+
+  app.get('/getOpenings', isLoggedIn, function (req, res) {
+    var id = req.session.clientIdent;
+    var year = req.session.year;
+    var db = req.db;
+    db.collection('OpeningBalance').findOne({"clientId": id, "year": year}, function (err, items) {
+      res.json(items);
+    });
+  });
+
   function prepareGenericRoutes(target) {
     app.get('/get' + target, isLoggedIn, function (req, res) {
       var id = req.session.clientIdent;
-      console.log('get'+target+' clientIdent: '+id);
       var db = req.db;
       db.collection(target).find({"clientId": id}).toArray(function (err, items) {
         res.json(items);
@@ -114,9 +137,10 @@ module.exports = function (app, passport, _) {
   }),
     function(req, res) {
       console.log('login userId: ' + req.user.local.id);
+      req.session.year = 2015;
       req.session.user = {
         id: parseInt(req.user.local.id),
-        userName: req.user.local.email
+        userName: req.user.local.username
       };
       req.session.clientIdent = parseInt(req.body.clientId);
       res.redirect('/');
