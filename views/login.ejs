@@ -67,6 +67,7 @@
           <label>Klienci</label>
           <select class="form-control" ng-options="item.id as item.name for item in clients" ng-model="clientId" name="clientSelect" required></select>
           <input type="hidden" name="clientId" value="{{clientId}}"/>
+          <input type="hidden" name="xxx" value="zzz"/>
         </div>
 
         <button type="submit" class="btn btn-success btn-lg">Login</button>

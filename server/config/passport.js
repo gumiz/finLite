@@ -18,10 +18,13 @@ module.exports = function (passport) {
   });
 
   passport.deserializeUser(function (id, done) {
-      done(null, { _id: '554bc303995bea9c1a0fff2f',
-        local:
-        { password: '$2a$08$IetmCT0EYaLWXNauVgI1j.EC1MYyVwSY2hd8jd1RunbCVENDX6EoW',
-          email: 'ania' },
+      done(null, {
+        _id: '554bc303995bea9c1a0fff2f',
+        local: {
+          password: '$2a$08$IetmCT0EYaLWXNauVgI1j.EC1MYyVwSY2hd8jd1RunbCVENDX6EoW',
+          email: 'ania',
+          id: 1
+        },
         __v: 0 });
   });
 

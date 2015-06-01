@@ -57,6 +57,7 @@ module.exports = function (app, passport, _) {
     app.post('/add' + target, function (req, res) {
       var db = req.db;
       req.body.clientId = req.session.clientIdent;
+      req.body.userId = req.session.user.id;
       db.collection(target).insert(req.body, function (err, result) {
         res.send(
           (err === null) ? {msg: ''} : {msg: err}
@@ -112,6 +113,11 @@ module.exports = function (app, passport, _) {
     failureFlash: true // allow flash messages
   }),
     function(req, res) {
+      console.log('login userId: ' + req.user.local.id);
+      req.session.user = {
+        id: parseInt(req.user.local.id),
+        userName: req.user.local.email
+      };
       req.session.clientIdent = parseInt(req.body.clientId);
       res.redirect('/');
     });
