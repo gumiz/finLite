@@ -10,8 +10,8 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
     ajaxService.doPostWithBlock('saveOpenings', item).then(successFunc);
   };
 
-  var getOpenings = function(item, successFunc) {
-    ajaxService.doPostWithBlock('getOpenings', item).then(successFunc);
+  var getOpenings = function(successFunc) {
+    ajaxService.doGet('getOpenings').then(successFunc);
   };
 
   var getAccounts = function(successFun) {

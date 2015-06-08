@@ -46,25 +46,44 @@ module.exports = function (app, passport, _) {
 
   app.post('/saveOpenings', function (req, res) {
     var db = req.db;
+    _.each(req.body, function(item){
+      item.dt = isNaN(item.dt) ? 0 : parseFloat(item.dt);
+      item.ct = isNaN(item.ct) ? 0 : parseFloat(item.ct);
+    });
     var openings = {
       year: req.session.year,
       clientId: req.session.clientIdent,
       userId: req.session.user.id,
       openings: req.body
     };
-    db.collection('OpeningBalance').insert(openings, function (err, result) {
+    db.collection('OpeningBalance').update({"year": req.session.year, "clientId": req.session.clientIdent}, openings, function (err, result) {
       res.send(
         (err === null) ? {msg: ''} : {msg: err}
       );
     });
   });
 
+  function findOpening(openings, name, propertyName) {
+    var opening =  _.find(openings.openings, function (op) {
+      return op.name == name;
+    });
+    if (opening)
+      return opening[propertyName];
+    return 0;
+  }
+
   app.get('/getOpenings', isLoggedIn, function (req, res) {
     var id = req.session.clientIdent;
     var year = req.session.year;
     var db = req.db;
-    db.collection('OpeningBalance').findOne({"clientId": id, "year": year}, function (err, items) {
-      res.json(items);
+    db.collection('OpeningBalance').findOne({"clientId": id, "year": year}, function (err, openings) {
+      db.collection('Accounts').find({"clientId": id}).toArray(function (err, accounts) {
+        _.each(accounts, function(acc){
+          acc.ct = findOpening(openings, acc.name, "ct");
+          acc.dt = findOpening(openings, acc.name, "dt");
+        });
+        res.json(accounts);
+      });
     });
   });
 
