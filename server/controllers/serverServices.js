@@ -51,12 +51,13 @@ module.exports = function (app, passport, _) {
       item.ct = isNaN(item.ct) ? 0 : parseFloat(item.ct);
     });
     var openings = {
+      _id: "BO"+req.session.year+req.session.clientIdent,
       year: req.session.year,
       clientId: req.session.clientIdent,
       userId: req.session.user.id,
       openings: req.body
     };
-    db.collection('OpeningBalance').update({"year": req.session.year, "clientId": req.session.clientIdent}, openings, function (err, result) {
+    db.collection('OpeningBalance').save(openings, function (err, result) {
       res.send(
         (err === null) ? {msg: ''} : {msg: err}
       );
@@ -64,6 +65,7 @@ module.exports = function (app, passport, _) {
   });
 
   function findOpening(openings, name, propertyName) {
+    if (!openings)return 0;
     var opening =  _.find(openings.openings, function (op) {
       return op.name == name;
     });
