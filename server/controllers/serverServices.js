@@ -1,33 +1,8 @@
 module.exports = function (app, passport, _) {
 
+
   prepareGenericRoutes('Accounts');
   prepareGenericRoutes('Documents');
-
-  function getReports(req, res) {
-    var db = req.db;
-    var id = req.session.clientIdent;
-    console.log('getReports: '+id);
-    db.collection('Documents').find({"clientId": id}).toArray(function (err, items) {
-      var acc = {};
-      _.each(items, function (item) {
-        var newItem = {id: item.autoNumber, number: item.number, price: item.price};
-        if (acc[item.accountCt] == undefined) {
-          acc[item.accountCt] = {dt: [], ct: []}
-        }
-        if (acc[item.accountDt] == undefined) {
-          acc[item.accountDt] = {dt: [], ct: []}
-        }
-        acc[item.accountCt].ct.push(newItem);
-        acc[item.accountDt].dt.push(newItem);
-      });
-      var accountNames = _.keys(acc);
-      var result = [];
-      _.each(accountNames, function (name) {
-        result.push({accountName: name, items: acc[name]});
-      });
-      res.json(result);
-    });
-  }
 
   app.get('/getClients', function (req, res) {
     var db = req.db;
@@ -116,10 +91,6 @@ module.exports = function (app, passport, _) {
       });
     });
   }
-
-  app.get('/getReports', isLoggedIn, function (req, res) {
-    getReports(req, res)
-  });
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
