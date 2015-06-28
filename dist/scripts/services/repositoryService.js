@@ -6,6 +6,14 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
     return elems[elems.length - 1];
   };
 
+  var saveOpenings = function(item, successFunc) {
+    ajaxService.doPostWithBlock('saveOpenings', item).then(successFunc);
+  };
+
+  var getOpenings = function(successFunc) {
+    ajaxService.doGet('getOpenings').then(successFunc);
+  };
+
   var getAccounts = function(successFun) {
     ajaxService.doGet('getAccounts').then(successFun);
   };
@@ -43,6 +51,8 @@ angular.module('finLiteApp').service('repositoryService', ['$http', 'ajaxService
   };
 
   return {
+    saveOpenings: saveOpenings,
+    getOpenings: getOpenings,
     getClient: getClient,
     getIdFromUrl: getIdFromUrl,
     addAccount: addAccount,

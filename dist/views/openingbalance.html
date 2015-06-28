@@ -1,0 +1,27 @@
+<style></style>
+
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="col-md-1">Numer</th>
+      <th class="col-md-5">Nazwa</th>
+      <th class="col-md-2">BO Wn</th>
+      <th class="col-md-2">BO Ma</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="op in openings">
+      <td>{{op.name}}</td>
+      <td>{{op.description}}</td>
+      <td><input class="form-control text-right" ng-model="op.dt" placeholder="kwota Wn"/></td>
+      <td><input class="form-control text-right" ng-model="op.ct" placeholder="kwota Ma"/></td>
+    </tr>
+    </tbody>
+  </table>
+    <div class="pull-right">
+      <button ng-click="saveOpenings()" class="btn btn-success right"><span class="glyphicon glyphicon-ok"></span> Zapisz</button>
+    </div>
+  <p></p>
+</div>
+
