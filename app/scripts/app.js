@@ -26,7 +26,7 @@ angular
         controller: 'AccountsCtrl'
       })
       .when('/openingBalance', {
-        templateUrl: 'views/openingBalance.html',
+        templateUrl: 'views/openingbalance.html',
         controller: 'OpeningBalanceCtrl'
       })
       .when('/documents', {
