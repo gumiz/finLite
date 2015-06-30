@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f9556175-338c-4a09-8e8a-f6b979cb3b5d" name="Default" comment="">
       <change type="DELETED" beforePath="D:\workspace\finLite\dist\scripts\main.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/finlite.ejs" afterPath="$PROJECT_DIR$/views/finlite.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finLight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +25,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="web.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6474429">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="finlite.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/finlite.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3549832">
+              <caret line="48" column="69" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+              <folding>
+                <marker date="1435695254997" expanded="true" signature="1114:1265" placeholder="..." />
+                <marker date="1435695254997" expanded="true" signature="1207:1233" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,7 +130,6 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/documents.js" />
         <option value="$PROJECT_DIR$/app/views/documents.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/views/finlite.ejs" />
         <option value="$PROJECT_DIR$/app/views/accounts.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/accounts.js" />
         <option value="$PROJECT_DIR$/server/config/passport.js" />
@@ -129,6 +142,7 @@
         <option value="$PROJECT_DIR$/server/controllers/reports.js" />
         <option value="$PROJECT_DIR$/app/views/reports.html" />
         <option value="$PROJECT_DIR$/web.js" />
+        <option value="$PROJECT_DIR$/views/finlite.ejs" />
       </list>
     </option>
   </component>
@@ -714,14 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/finlite.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="47" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/spec/services/repositoryservice.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24047878">
@@ -832,9 +838,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6474429">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/finlite.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3549832">
+          <caret line="48" column="69" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+          <folding>
+            <marker date="1435695254997" expanded="true" signature="1114:1265" placeholder="..." />
+            <marker date="1435695254997" expanded="true" signature="1207:1233" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
