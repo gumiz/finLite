@@ -25,7 +25,7 @@ angular
         templateUrl: 'views/accounts.html',
         controller: 'AccountsCtrl'
       })
-      .when('/openingBalance', {
+      .when('/openingbalance', {
         templateUrl: 'views/openingbalance.html',
         controller: 'OpeningBalanceCtrl'
       })
