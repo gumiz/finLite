@@ -67,6 +67,31 @@ angular
       }
     }
   }])
+
+  .directive('phonenumberDirective', ['$filter', function($filter) {
+    function link(scope, element, attributes) {
+      scope.inputValue = scope.phonenumberModel;
+      scope.$watch('inputValue', function(value, oldValue) {
+        value = String(value);
+        var number = value.replace(/[^0-9]+/g, '');
+        scope.phonenumberModel = number;
+        scope.inputValue = $filter('phonenumber')(number);
+      });
+    }
+
+    return {
+      link: link,
+      restrict: 'E',
+      scope: {
+        phonenumberPlaceholder: '=placeholder',
+        phonenumberModel: '=model',
+      },
+      //templateUrl: '/static/phonenumberModule/template.html',
+      template: '<input ng-model="inputValue" type="tel" class="phonenumber" placeholder="{{phonenumberPlaceholder}}" title="Phonenumber (Format: (999) 9999-9999)">',
+    };
+  }])
+
+
   .filter('total', function () {
     return function (input, property) {
       var i = input instanceof Array ? input.length : 0;

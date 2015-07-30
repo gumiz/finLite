@@ -32,5 +32,6 @@ app.use(flash());
 
 require('./server/controllers/serverServices')(app, passport, _);
 require('./server/controllers/reports')(app, passport, _);
+require('./server/controllers/accounts')(app, passport, _);
 
 app.use(express.static(__dirname + '/app'));

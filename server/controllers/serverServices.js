@@ -1,7 +1,5 @@
 module.exports = function (app, passport, _) {
 
-
-  prepareGenericRoutes('Accounts');
   prepareGenericRoutes('Documents');
 
   app.get('/getClients', function (req, res) {
@@ -54,7 +52,7 @@ module.exports = function (app, passport, _) {
     var year = req.session.year;
     var db = req.db;
     db.collection('OpeningBalance').findOne({"clientId": id, "year": year}, function (err, openings) {
-      db.collection('Accounts').find({"clientId": id}).toArray(function (err, accounts) {
+      db.collection('Accounts').find({"clientId": id}).sort( { name: 1 } ).toArray(function (err, accounts) {
         _.each(accounts, function(acc){
           acc.ct = findOpening(openings, acc.name, "ct");
           acc.dt = findOpening(openings, acc.name, "dt");

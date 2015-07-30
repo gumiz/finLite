@@ -6,8 +6,8 @@
     <tr>
       <th class="col-md-1">Numer</th>
       <th class="col-md-5">Nazwa</th>
-      <th class="col-md-2">BO Wn</th>
-      <th class="col-md-2">BO Ma</th>
+      <th class="col-md-2 text-right">BO Wn</th>
+      <th class="col-md-2 text-right">BO Ma</th>
     </tr>
     </thead>
     <tbody>
@@ -16,6 +16,12 @@
       <td>{{op.description}}</td>
       <td><input class="form-control text-right" ng-model="op.dt" placeholder="kwota Wn"/></td>
       <td><input class="form-control text-right" ng-model="op.ct" placeholder="kwota Ma"/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="text-right"><b>{{openings | total : 'dt' | currency: ""}}</b></td>
+      <td class="text-right"><b>{{openings | total : 'ct' | currency: ""}}</b></td>
     </tr>
     </tbody>
   </table>
